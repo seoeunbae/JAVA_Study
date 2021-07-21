@@ -30,3 +30,23 @@ class executeclass{//nonstatic class는 innerclass에서만 가능하다.//내�
             System.out.println(child.getStudentNo());
         }
 }
+
+
+class A{
+    class B{
+        B() { }
+        int field1;
+        void method1() {
+            System.out.println("field1: "+field1);
+        }
+    }
+}
+class executeclass2{
+    public static void main(String[] args) {
+        A a = new A();
+        A.B b = a.new B();
+        b.field1 = 3;
+        b.method1();
+    }
+
+}
